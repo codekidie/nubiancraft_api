@@ -6,9 +6,10 @@ return array(
     array(
       'default' => 
       array(
-        0 => '001_create_users',
-        1 => '002_create_clearanceforms',
-        2 => '003_create_registers',
+        0 => '004_create_gems',
+        1 => '005_create_joborders',
+        2 => '006_create_3djewels',
+        3 => '007_create_customjewels',
       ),
     ),
     'module' => 

@@ -6,7 +6,7 @@
 return array(
 	'default' => array(
 		'connection'  => array(
-			'dsn'        => 'mysql:host=localhost;dbname=policeclearance',
+			'dsn'        => 'mysql:host=localhost;dbname=jewelry_api',
 			'username'   => 'root',
 			'password'   => '',
 		),

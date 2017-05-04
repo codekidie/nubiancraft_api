@@ -103,44 +103,9 @@ class Controller_Admin extends Controller_Base
 	 */
 	public function action_index()
 	{
-		if (Input::method() == 'POST')
-		{
-			
-			    $clearanceform = Model_Clearanceform::forge(array(
-					'fileno' => Input::post('fileno'),
-					'orno' => Input::post('orno'),
-					'firstname' => Input::post('firstname'),
-					'middlename' => Input::post('middlename'),
-					'lastname' => Input::post('lastname'),
-					'address' => Input::post('address'),
-					'sex' => Input::post('sex'),
-					'civilstatus' => Input::post('civilstatus'),
-					'dateofbirth' => Input::post('dateofbirth'),
-					'placeofbirth' => Input::post('placeofbirth'),
-					'comtaxno' => Input::post('comtaxno'),
-					'issuedat' => Input::post('issuedat'),
-					'issuedon' => Input::post('issuedon'),
-					'schedule' => Input::post('schedule'),
-					'payment' => Input::post('payment'),
-					'purpose' => Input::post('purpose'),
-					'contactnumber' => Input::post('contactnumber'),
-				));
-
-				if ($clearanceform and $clearanceform->save())
-				{
-					if (Auth::get('group') == 100) {
-						Session::set_flash('success', e('Added clearance form #'.$clearanceform->id.'.'));
-						Response::redirect('admin/clearanceform');
-					}else if (Auth::get('group') == 50) {
-						Session::set_flash('success', e('Application Successfully Submitted'));
-						Response::redirect('admin/clearanceform/create');
-					}
-					
-				}
-		}
-				
+		
 		$this->template->title = 'Dashboard';
-		$this->template->content = View::forge('admin/clearanceform/create');
+		$this->template->content = View::forge('admin');
 	}
 
 }
